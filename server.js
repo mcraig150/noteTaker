@@ -3,6 +3,8 @@ var path = require('path');
 const fs = require('fs');
 var app = express();
 const router = express.Router();
+var PORT = process.env.PORT || 3000;
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -76,7 +78,7 @@ app.post("/api/notes", (req, res) => {
 app.use("/", router);
 
  
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log("Starting server on port 3000")
       
 });
